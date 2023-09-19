@@ -1,4 +1,4 @@
-﻿namespace _01.BasicStackOperations
+﻿namespace _02.BasicQueueOperations
 {
     internal class Program
     {
@@ -9,22 +9,22 @@
             int elementsToPop = input[1];
             int elementToSearch = input[2];
             int[] numbers = Console.ReadLine().Split().Select(int.Parse).ToArray();
-            Stack<int> stack = new Stack<int>();
+            Queue<int> queue = new Queue<int>();
             for (int i = 0; i < elementsToPush; i++)
             {
-                stack.Push(numbers[i]);
+                queue.Enqueue(numbers[i]);
             }
             for (int i = 0; i < elementsToPop; i++)
             {
-                stack.Pop();
+                queue.Dequeue();
             }
-            if (stack.Contains(elementToSearch))
+            if (queue.Contains(elementToSearch))
             {
                 Console.WriteLine("true");
             }
-            else if (stack.Count > 0)
+            else if (queue.Count > 0)
             {
-                Console.WriteLine(stack.Min());
+                Console.WriteLine(queue.Min());
             }
             else
             {
